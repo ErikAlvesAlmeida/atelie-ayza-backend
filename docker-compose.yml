@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres:15
+    container_name: nest-postgres
+    environment:
+      POSTGRES_USER: atelie_ayza
+      POSTGRES_PASSWORD: atelie_ayza
+      POSTGRES_DB: atelie_ayza
+    ports:
+      - "5432:5432"
