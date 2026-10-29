@@ -4,6 +4,7 @@ import { AppService } from './app.service.js';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import databaseConfig from './config/database.config.js';
+import { CatalogoModule } from './catalogo/catalogo.module.js';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import databaseConfig from './config/database.config.js';
         autoLoadEntities: true,
       }),
     }),
+    CatalogoModule
   ],
   controllers: [AppController],
   providers: [AppService],
