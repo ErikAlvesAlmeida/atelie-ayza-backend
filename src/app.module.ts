@@ -7,6 +7,8 @@ import databaseConfig from './config/database.config.js';
 import { CatalogoModule } from './catalogo/catalogo.module.js';
 import { PessoasModule } from './pessoas/pessoas.module.js';
 import { AgendaModule } from './agenda/agenda.module.js';
+import { PedidosModule } from './pedidos/pedidos.module.js';
+import { EstoqueModule } from './estoque/estoque.module.js';
 
 @Module({
   imports: [
@@ -14,7 +16,6 @@ import { AgendaModule } from './agenda/agenda.module.js';
       isGlobal: true,
       load: [databaseConfig],
     }),
-
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -26,6 +27,8 @@ import { AgendaModule } from './agenda/agenda.module.js';
     CatalogoModule,
     PessoasModule,
     AgendaModule,
+    PedidosModule,
+    EstoqueModule,
   ],
   controllers: [AppController],
   providers: [AppService],
