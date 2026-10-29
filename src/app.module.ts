@@ -5,6 +5,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import databaseConfig from './config/database.config.js';
 import { CatalogoModule } from './catalogo/catalogo.module.js';
+import { PessoasModule } from './pessoas/pessoas.module.js';
+import { AgendaModule } from './agenda/agenda.module.js';
 
 @Module({
   imports: [
@@ -21,7 +23,9 @@ import { CatalogoModule } from './catalogo/catalogo.module.js';
         autoLoadEntities: true,
       }),
     }),
-    CatalogoModule
+    CatalogoModule,
+    PessoasModule,
+    AgendaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
